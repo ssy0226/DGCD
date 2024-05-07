@@ -20,7 +20,7 @@ def set_args():
     parser.add_argument('--num_skill', default=21, type=int, help='')
     parser.add_argument('--lr', default=0.001, type=float, help='')
     parser.add_argument('--batch_size', default=256, type=int, help='')
-    parser.add_argument('--p', default=0.77, type=float, help='')
+    parser.add_argument('--t', default=0.77, type=float, help='')
     parser.add_argument('--reg_r', default=1e-4, type=float, help='')
     parser.add_argument('--kl_r', default=1e-6, type=float, help='')
     return parser.parse_args()
@@ -31,10 +31,10 @@ device = torch.device('cuda:0')
 result_r_m = [[[1.0],[1.0]] for i in range(5)]
 def train():
     data_loader = TrainDataLoader(data_path)
-    net = DGCD(class_n,student_n,exer_n,skill_n,args.p)
+    net = DGCD(class_n,student_n,exer_n,skill_n,t)
 
     net = net.to(device)
-    optimizer = optim.Adam(net.parameters(),lr=learn,weight_decay=args.reg_r)
+    optimizer = optim.Adam(net.parameters(),lr=learn,weight_decay=reg_r)
     print('training model...')
     loss_function = nn.MSELoss()
     rmsem = 1.0
@@ -91,4 +91,6 @@ if __name__ == '__main__':
     learn = args.lr
     data_path = args.data_path
     bsize = args.batch_size
+    t = args.t
+    reg_r = args.reg_r
     train()

@@ -84,14 +84,14 @@ class NoneNegClipper(object):
             w.add_(a)
 
 class DGCD(nn.Module):
-    def __init__(self,class_n,stu_n,exer_n,skill_n,p):
+    def __init__(self,class_n,stu_n,exer_n,skill_n,t):
         self.class_n = class_n
         self.stu_n = stu_n
         self.exer_n = exer_n
         self.skill_n = skill_n
         self.prednet_input_len = skill_n
         self.prednet_len1,self.prednet_len2,self.prednet_len3 = 256,128,1
-        self.pi = p 
+        self.pi = t 
         super(DGCD, self).__init__()
 
         self.class_emb = nn.Embedding(self.class_n, self.skill_n)

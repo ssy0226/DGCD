@@ -11,3 +11,24 @@ Install library
 ```
 pip install -r requirements.txt
 ```
+
+## How to Run Model
+To run the DGCD, you should set the args of the dataset and the training. As follows:
+```
+python train.py --data_path (dataset's path) --num_stu (number of students) --num_exer (number of exercise) --num_class (number of class) \
+                --num_skill (number of skill) --lr (learning rate) --t (temperature parameter) --kl_r (weight of KL Loss)
+```
+
+## Citation
+If you find our work is useful for your research, please consider citing:
+```
+@inproceedings{song_2024_DGCD,
+  title={DGCD: An Adaptive Denoising GNN for Group-level Cognitive Diagnosis.},
+  author={Ma, Haiping and Song, Siyu and Qin, chuan and Yu, Xiaoshan and Zhang, Limiao and Zhang, Xingyi and Zhu, Hengshu},
+  booktitle = {Proceedings of the 33th International Joint Conference on Artificial Intelligence},
+  year={2024}
+}
+```
+
+## License
+This project is licensed under the MIT License.

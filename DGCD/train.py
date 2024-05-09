@@ -15,7 +15,7 @@ def set_args():
     parser.add_argument('--data_path', default='data/SLPbio_', type=str, help='')
     parser.add_argument('--num_stu', default=3922, type=int, help='num_stu')
     parser.add_argument('--num_exer', default=120, type=int, help='num_exer')
-    parser.add_argument('--num_class', default=146, type=int, help='num_class')
+    parser.add_argument('--num_class', default=145, type=int, help='num_class')
     parser.add_argument('--num_train_epochs', default=100, type=int, help='')
     parser.add_argument('--num_skill', default=21, type=int, help='')
     parser.add_argument('--lr', default=0.001, type=float, help='')

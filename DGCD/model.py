@@ -189,7 +189,7 @@ class DGCD(nn.Module):
         input_x = exer_dis * (class_k - exer_k) * kn_emb
         input_x = self.drop_1(torch.tanh(self.prednet_full1(input_x)))
         input_x = self.drop_2(torch.tanh(self.prednet_full2(input_x)))
-        output_d1 = torch.sigmoid(self.prednet_full3(input_x))
+        output = torch.sigmoid(self.prednet_full3(input_x))
 
         return output,kl_loss
     
